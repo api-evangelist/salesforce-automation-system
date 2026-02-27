@@ -1,0 +1,233 @@
+name: Salesforce Automation System
+description: A comprehensive API collection for automating Salesforce operations including CRM, sales, marketing, and customer service workflows
+image: https://example.com/salesforce-automation-logo.png
+url: https://api.salesforce-automation.example.com
+created: '2024-01-15'
+modified: '2024-01-15'
+apis:
+- name: Salesforce CRM API
+  description: Core API for managing customer relationships, contacts, accounts, and opportunities
+  image: https://example.com/crm-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/crm
+  baseURL: https://api.salesforce-automation.example.com/v1/crm
+  version: '1.0'
+  tags:
+  - CRM
+  - Contacts
+  - Accounts
+  - Opportunities
+  - Leads
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/crm/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/crm/openapi.json
+  - type: Authentication
+    url: https://docs.salesforce-automation.example.com/crm/authentication
+  - type: Pricing
+    url: https://salesforce-automation.example.com/pricing/crm
+  - type: RateLimits
+    url: https://docs.salesforce-automation.example.com/crm/rate-limits
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/crm
+  - type: Email
+    url: mailto:crm-support@salesforce-automation.example.com
+- name: Sales Automation API
+  description: Automate sales processes including pipeline management, forecasting, quotes, and deal tracking
+  image: https://example.com/sales-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/sales
+  baseURL: https://api.salesforce-automation.example.com/v1/sales
+  version: '1.0'
+  tags:
+  - Sales
+  - Pipeline
+  - Forecasting
+  - Quotes
+  - Deals
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/sales/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/sales/openapi.json
+  - type: Sandbox
+    url: https://sandbox.salesforce-automation.example.com/sales
+  - type: Webhooks
+    url: https://docs.salesforce-automation.example.com/sales/webhooks
+  - type: SDKs
+    url: https://docs.salesforce-automation.example.com/sales/sdks
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/sales
+  - type: Email
+    url: mailto:sales-support@salesforce-automation.example.com
+- name: Marketing Automation API
+  description: Manage marketing campaigns, email automation, lead nurturing, and analytics
+  image: https://example.com/marketing-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/marketing
+  baseURL: https://api.salesforce-automation.example.com/v1/marketing
+  version: '1.0'
+  tags:
+  - Marketing
+  - Campaigns
+  - Email
+  - Lead Nurturing
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/marketing/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/marketing/openapi.json
+  - type: ChangeLog
+    url: https://docs.salesforce-automation.example.com/marketing/changelog
+  - type: StatusPage
+    url: https://status.salesforce-automation.example.com/marketing
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/marketing
+  - type: Email
+    url: mailto:marketing-support@salesforce-automation.example.com
+- name: Customer Service API
+  description: Manage customer support tickets, cases, knowledge base, and service workflows
+  image: https://example.com/service-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/service
+  baseURL: https://api.salesforce-automation.example.com/v1/service
+  version: '1.0'
+  tags:
+  - Customer Service
+  - Support
+  - Cases
+  - Tickets
+  - Knowledge Base
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/service/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/service/openapi.json
+  - type: Tutorials
+    url: https://docs.salesforce-automation.example.com/service/tutorials
+  - type: APIStatus
+    url: https://status.salesforce-automation.example.com/service
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/service
+  - type: Email
+    url: mailto:service-support@salesforce-automation.example.com
+- name: Analytics & Reporting API
+  description: Generate reports, dashboards, and insights from sales and customer data
+  image: https://example.com/analytics-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/analytics
+  baseURL: https://api.salesforce-automation.example.com/v1/analytics
+  version: '1.0'
+  tags:
+  - Analytics
+  - Reporting
+  - Dashboards
+  - Insights
+  - BI
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/analytics/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/analytics/openapi.json
+  - type: Examples
+    url: https://docs.salesforce-automation.example.com/analytics/examples
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/analytics
+  - type: Email
+    url: mailto:analytics-support@salesforce-automation.example.com
+- name: Workflow Automation API
+  description: Create and manage automated workflows, triggers, and business process automation
+  image: https://example.com/workflow-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/workflows
+  baseURL: https://api.salesforce-automation.example.com/v1/workflows
+  version: '1.0'
+  tags:
+  - Automation
+  - Workflows
+  - Triggers
+  - Business Process
+  - Integration
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/workflows/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/workflows/openapi.json
+  - type: Webhooks
+    url: https://docs.salesforce-automation.example.com/workflows/webhooks
+  - type: Templates
+    url: https://docs.salesforce-automation.example.com/workflows/templates
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/workflows
+  - type: Email
+    url: mailto:workflows-support@salesforce-automation.example.com
+- name: Integration API
+  description: Connect Salesforce Automation System with third-party applications and services
+  image: https://example.com/integration-api-icon.png
+  humanURL: https://docs.salesforce-automation.example.com/integration
+  baseURL: https://api.salesforce-automation.example.com/v1/integration
+  version: '1.0'
+  tags:
+  - Integration
+  - Connectors
+  - Third-Party
+  - Sync
+  - Import/Export
+  properties:
+  - type: Documentation
+    url: https://docs.salesforce-automation.example.com/integration/reference
+  - type: OpenAPI
+    url: https://api.salesforce-automation.example.com/integration/openapi.json
+  - type: Partners
+    url: https://salesforce-automation.example.com/partners
+  - type: Marketplace
+    url: https://marketplace.salesforce-automation.example.com
+  contact:
+  - type: Support
+    url: https://support.salesforce-automation.example.com/integration
+  - type: Email
+    url: mailto:integration-support@salesforce-automation.example.com
+common:
+- type: Portal
+  url: https://portal.salesforce-automation.example.com
+- type: SignUp
+  url: https://salesforce-automation.example.com/signup
+- type: Login
+  url: https://salesforce-automation.example.com/login
+- type: Authentication
+  url: https://docs.salesforce-automation.example.com/authentication
+- type: TermsOfService
+  url: https://salesforce-automation.example.com/terms
+- type: PrivacyPolicy
+  url: https://salesforce-automation.example.com/privacy
+- type: Blog
+  url: https://blog.salesforce-automation.example.com
+- type: StatusPage
+  url: https://status.salesforce-automation.example.com
+- type: ChangeLog
+  url: https://salesforce-automation.example.com/changelog
+- type: Pricing
+  url: https://salesforce-automation.example.com/pricing
+- type: GettingStarted
+  url: https://docs.salesforce-automation.example.com/getting-started
+maintainers:
+- type: Organization
+  name: Salesforce Automation Inc.
+  url: https://salesforce-automation.example.com
+  email: api-team@salesforce-automation.example.com
+- type: Lead
+  name: API Product Team
+  email: api-product@salesforce-automation.example.com
+  twitter: '@SFAutomationAPI'
+tags:
+- Salesforce
+- Automation
+- CRM
+- Sales
+- Marketing
+- Customer Service
+- Enterprise
+- B2B
+- SaaS
