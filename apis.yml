@@ -9,9 +9,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Salesforce
   - Automation
   - CRM
+  - Salesforce
   - Workflow
 url: >-
   https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml
