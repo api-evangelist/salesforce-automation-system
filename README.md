@@ -1,158 +1,104 @@
 # Salesforce Automation System (salesforce-automation-system)
-A comprehensive API collection for automating Salesforce operations including CRM, sales, marketing, and customer service workflows
+Salesforce automation APIs and tools for building Flow-based automation, approval processes, and workflow automation to automate CRM business processes programmatically.
 
-**URL:** [Visit APIs.json URL](https://api.salesforce-automation.example.com)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml)
 
-## Tags:
+## Scope
 
- - Salesforce, Automation, CRM, Sales, Marketing, Customer Service, Enterprise, B2B, SaaS
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
+
+## Tags
+
+- Approval Process, Automation, CRM, Flow, Process Builder, Salesforce, Workflow
 
 ## Timestamps
 
-- **Created:** 2024-01-15 
-- **Modified:** 2024-01-15 
+- **Created:** 2024-01-15
+- **Modified:** 2026-05-02
 
 ## APIs
 
-### Salesforce CRM API
-Core API for managing customer relationships, contacts, accounts, and opportunities
+### Salesforce Flow Automation API
+REST API for invoking autolaunched flows, querying flow definitions via Tooling API, and managing approval process submissions.
 
-**Human URL:** [https://docs.salesforce-automation.example.com/crm](https://docs.salesforce-automation.example.com/crm)
+**Human URL:** https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm
 
-
-#### Tags:
-
- - CRM, Contacts, Accounts, Opportunities, Leads
+#### Tags
+- Approval Process, Automation, CRM, Flow, Salesforce, Workflow
 
 #### Properties
+- [Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm)
+- [OpenAPI](openapi/salesforce-automation-flow-openapi.yml)
+- [JSON Schema (Flow Definition)](json-schema/salesforce-flow-definition-schema.json)
+- [JSON Schema (Approval Request)](json-schema/salesforce-approval-request-schema.json)
+- [JSON-LD Context](json-ld/salesforce-automation-system-context.jsonld)
+- [Spectral Rules](rules/salesforce-automation-system-rules.yml)
+- [Capabilities](capabilities/process-automation.yaml)
+- [Vocabulary](vocabulary/salesforce-automation-system-vocabulary.yml)
 
-- [Documentation](https://docs.salesforce-automation.example.com/crm/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/crm/openapi.json)
-- [Authentication](https://docs.salesforce-automation.example.com/crm/authentication)
-- [Pricing](https://salesforce-automation.example.com/pricing/crm)
-- [RateLimits](https://docs.salesforce-automation.example.com/crm/rate-limits)
+---
 
-### Sales Automation API
-Automate sales processes including pipeline management, forecasting, quotes, and deal tracking
+### Salesforce Flow Builder
+Visual automation tool for building screen flows, record-triggered flows, and scheduled automations.
 
-**Human URL:** [https://docs.salesforce-automation.example.com/sales](https://docs.salesforce-automation.example.com/sales)
+**Human URL:** https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm
 
+---
 
-#### Tags:
+### Salesforce Approval Processes
+Multi-step approval automation for routing records through configurable review chains.
 
- - Sales, Pipeline, Forecasting, Quotes, Deals
+**Human URL:** https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm
 
-#### Properties
+---
 
-- [Documentation](https://docs.salesforce-automation.example.com/sales/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/sales/openapi.json)
-- [Sandbox](https://sandbox.salesforce-automation.example.com/sales)
-- [Webhooks](https://docs.salesforce-automation.example.com/sales/webhooks)
-- [SDKs](https://docs.salesforce-automation.example.com/sales/sdks)
+## Capabilities
 
-### Marketing Automation API
-Manage marketing campaigns, email automation, lead nurturing, and analytics
+### Shared Definitions
 
-**Human URL:** [https://docs.salesforce-automation.example.com/marketing](https://docs.salesforce-automation.example.com/marketing)
+| File | Description |
+|------|-------------|
+| [capabilities/shared/salesforce-automation-flow.yaml](capabilities/shared/salesforce-automation-flow.yaml) | Shared consumed definition for Salesforce Flow Automation API |
 
+### Workflow Capabilities
 
-#### Tags:
+| File | Description | APIs |
+|------|-------------|------|
+| [capabilities/process-automation.yaml](capabilities/process-automation.yaml) | Process automation (flows + approvals) | Salesforce Flow Automation API |
 
- - Marketing, Campaigns, Email, Lead Nurturing, Analytics
+## Artifacts
 
-#### Properties
+| Artifact | Path |
+|----------|------|
+| OpenAPI Spec | [openapi/salesforce-automation-flow-openapi.yml](openapi/salesforce-automation-flow-openapi.yml) |
+| JSON Schema (Flow) | [json-schema/salesforce-flow-definition-schema.json](json-schema/salesforce-flow-definition-schema.json) |
+| JSON Schema (Approval) | [json-schema/salesforce-approval-request-schema.json](json-schema/salesforce-approval-request-schema.json) |
+| JSON Structure | [json-structure/salesforce-automation-system-structure.json](json-structure/salesforce-automation-system-structure.json) |
+| JSON-LD Context | [json-ld/salesforce-automation-system-context.jsonld](json-ld/salesforce-automation-system-context.jsonld) |
+| Spectral Rules | [rules/salesforce-automation-system-rules.yml](rules/salesforce-automation-system-rules.yml) |
+| Vocabulary | [vocabulary/salesforce-automation-system-vocabulary.yml](vocabulary/salesforce-automation-system-vocabulary.yml) |
 
-- [Documentation](https://docs.salesforce-automation.example.com/marketing/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/marketing/openapi.json)
-- [ChangeLog](https://docs.salesforce-automation.example.com/marketing/changelog)
-- [StatusPage](https://status.salesforce-automation.example.com/marketing)
+## Examples
 
-### Customer Service API
-Manage customer support tickets, cases, knowledge base, and service workflows
-
-**Human URL:** [https://docs.salesforce-automation.example.com/service](https://docs.salesforce-automation.example.com/service)
-
-
-#### Tags:
-
- - Customer Service, Support, Cases, Tickets, Knowledge Base
-
-#### Properties
-
-- [Documentation](https://docs.salesforce-automation.example.com/service/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/service/openapi.json)
-- [Tutorials](https://docs.salesforce-automation.example.com/service/tutorials)
-- [APIStatus](https://status.salesforce-automation.example.com/service)
-
-### Analytics & Reporting API
-Generate reports, dashboards, and insights from sales and customer data
-
-**Human URL:** [https://docs.salesforce-automation.example.com/analytics](https://docs.salesforce-automation.example.com/analytics)
-
-
-#### Tags:
-
- - Analytics, Reporting, Dashboards, Insights, BI
-
-#### Properties
-
-- [Documentation](https://docs.salesforce-automation.example.com/analytics/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/analytics/openapi.json)
-- [Examples](https://docs.salesforce-automation.example.com/analytics/examples)
-
-### Workflow Automation API
-Create and manage automated workflows, triggers, and business process automation
-
-**Human URL:** [https://docs.salesforce-automation.example.com/workflows](https://docs.salesforce-automation.example.com/workflows)
-
-
-#### Tags:
-
- - Automation, Workflows, Triggers, Business Process, Integration
-
-#### Properties
-
-- [Documentation](https://docs.salesforce-automation.example.com/workflows/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/workflows/openapi.json)
-- [Webhooks](https://docs.salesforce-automation.example.com/workflows/webhooks)
-- [Templates](https://docs.salesforce-automation.example.com/workflows/templates)
-
-### Integration API
-Connect Salesforce Automation System with third-party applications and services
-
-**Human URL:** [https://docs.salesforce-automation.example.com/integration](https://docs.salesforce-automation.example.com/integration)
-
-
-#### Tags:
-
- - Integration, Connectors, Third-Party, Sync, Import/Export
-
-#### Properties
-
-- [Documentation](https://docs.salesforce-automation.example.com/integration/reference)
-- [OpenAPI](https://api.salesforce-automation.example.com/integration/openapi.json)
-- [Partners](https://salesforce-automation.example.com/partners)
-- [Marketplace](https://marketplace.salesforce-automation.example.com)
+- [Invoke Flow](examples/salesforce-invoke-flow-example.json)
+- [Submit Approval Request](examples/salesforce-submit-approval-example.json)
 
 ## Common Properties
 
-- [Portal](https://portal.salesforce-automation.example.com)
-- [SignUp](https://salesforce-automation.example.com/signup)
-- [Login](https://salesforce-automation.example.com/login)
-- [Authentication](https://docs.salesforce-automation.example.com/authentication)
-- [TermsOfService](https://salesforce-automation.example.com/terms)
-- [PrivacyPolicy](https://salesforce-automation.example.com/privacy)
-- [Blog](https://blog.salesforce-automation.example.com)
-- [StatusPage](https://status.salesforce-automation.example.com)
-- [ChangeLog](https://salesforce-automation.example.com/changelog)
-- [Pricing](https://salesforce-automation.example.com/pricing)
-- [GettingStarted](https://docs.salesforce-automation.example.com/getting-started)
+- [Developer Portal](https://developer.salesforce.com/)
+- [Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/)
+- [Trailhead](https://trailhead.salesforce.com/content/learn/trails/automate_business_processes)
+- [Authentication](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm)
+- [Status](https://status.salesforce.com/)
+- [Support](https://help.salesforce.com/)
+- [Terms of Service](https://www.salesforce.com/company/legal/agreements/)
+- [Privacy Policy](https://www.salesforce.com/company/privacy/)
+- [GitHub Organization](https://github.com/salesforce)
+- [Community](https://trailhead.salesforce.com/trailblazer-community/topics/salesforcedeveloper)
 
 ## Maintainers
 
-**FN:** Salesforce Automation Inc.
-
-**Email:** api-team@salesforce-automation.example.com
-**FN:** API Product Team
-
-**Email:** api-product@salesforce-automation.example.com
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com

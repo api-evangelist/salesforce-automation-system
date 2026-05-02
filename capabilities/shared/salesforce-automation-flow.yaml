@@ -1,0 +1,239 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Salesforce Flow Automation API"
+  description: >-
+    Salesforce Flow Automation API for querying flow definitions, invoking
+    autolaunched flows, and managing approval processes via the Salesforce REST API.
+  tags:
+    - Approval Process
+    - Automation
+    - CRM
+    - Flow
+    - Process Builder
+    - Salesforce
+    - Workflow
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      SALESFORCE_OAUTH2_TOKEN: SALESFORCE_OAUTH2_TOKEN
+      SALESFORCE_INSTANCE_URL: SALESFORCE_INSTANCE_URL
+
+capability:
+  consumes:
+    - type: http
+      namespace: sf-flow-automation
+      baseUri: "{{env.SALESFORCE_INSTANCE_URL}}/services/data/v59.0"
+      description: "Salesforce Flow and Automation APIs."
+      authentication:
+        type: bearer
+        token: "{{env.SALESFORCE_OAUTH2_TOKEN}}"
+      resources:
+        - name: flow-definitions
+          path: /tooling/query
+          description: "Query Salesforce Flow definitions via Tooling API."
+          operations:
+            - name: query-flow-definitions
+              method: GET
+              description: "Query Flow definitions using SOQL."
+              inputParameters:
+                - name: q
+                  in: query
+                  type: string
+                  required: true
+                  description: "SOQL query for FlowDefinition objects."
+              outputRawFormat: json
+              outputParameters:
+                - name: flows
+                  type: object
+                  value: "$."
+
+        - name: flow-version
+          path: /tooling/sobjects/Flow/{id}
+          description: "Retrieve a specific Flow version."
+          operations:
+            - name: get-flow-version
+              method: GET
+              description: "Get a Flow version record by ID."
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Salesforce Flow record ID."
+              outputRawFormat: json
+              outputParameters:
+                - name: flow
+                  type: object
+                  value: "$."
+
+        - name: flow-invocation
+          path: /actions/custom/flow/{flowApiName}
+          description: "Invoke an autolaunched flow via REST action."
+          operations:
+            - name: invoke-flow
+              method: POST
+              description: "Invoke a Salesforce autolaunched Flow with input variables."
+              inputParameters:
+                - name: flowApiName
+                  in: path
+                  type: string
+                  required: true
+                  description: "API name of the flow to invoke."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  inputs: "{{tools.inputs}}"
+
+        - name: approval-processes
+          path: /process/approvals
+          description: "List approval processes and submit approval actions."
+          operations:
+            - name: list-approval-processes
+              method: GET
+              description: "Retrieve all approval process configurations."
+              outputRawFormat: json
+              outputParameters:
+                - name: approvals
+                  type: object
+                  value: "$."
+            - name: submit-approval-request
+              method: POST
+              description: "Submit, approve, or reject an approval process request."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: array
+                  value: "$."
+              body:
+                type: json
+                data:
+                  requests: "{{tools.requests}}"
+
+        - name: soql-query
+          path: /query
+          description: "Execute SOQL queries against Salesforce objects."
+          operations:
+            - name: query-automation-records
+              method: GET
+              description: "Query ProcessInstance, FlowInterview, or WorkflowRule records."
+              inputParameters:
+                - name: q
+                  in: query
+                  type: string
+                  required: true
+                  description: "SOQL query string."
+              outputRawFormat: json
+              outputParameters:
+                - name: records
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: sf-automation-api
+      resources:
+        - path: /v1/flows
+          name: flows
+          description: "Query Salesforce flow definitions."
+          operations:
+            - method: GET
+              name: query-flows
+              description: "Query flow definitions."
+              call: "sf-flow-automation.query-flow-definitions"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/flows/{id}
+          name: flow-by-id
+          operations:
+            - method: GET
+              name: get-flow
+              description: "Get a flow version by ID."
+              call: "sf-flow-automation.get-flow-version"
+              with:
+                id: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/approvals
+          name: approvals
+          operations:
+            - method: GET
+              name: list-approvals
+              description: "List approval processes."
+              call: "sf-flow-automation.list-approval-processes"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: submit-approval
+              description: "Submit approval request."
+              call: "sf-flow-automation.submit-approval-request"
+              outputParameters:
+                - type: array
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: sf-automation-mcp
+      transport: http
+      tools:
+        - name: query-flow-definitions
+          description: "Query Salesforce Flow definitions using SOQL via Tooling API."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "sf-flow-automation.query-flow-definitions"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-flow-version
+          description: "Get a specific Salesforce Flow version by record ID."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "sf-flow-automation.get-flow-version"
+          with:
+            id: "tools.id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: invoke-flow
+          description: "Invoke a Salesforce autolaunched Flow via REST action with input variables."
+          hints:
+            readOnly: false
+            destructive: false
+          call: "sf-flow-automation.invoke-flow"
+          with:
+            flowApiName: "tools.flowApiName"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-approval-processes
+          description: "List all approval process configurations in the Salesforce org."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "sf-flow-automation.list-approval-processes"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: submit-approval-request
+          description: "Submit, approve, reject, or recall a Salesforce approval process request."
+          hints:
+            readOnly: false
+            destructive: false
+          call: "sf-flow-automation.submit-approval-request"
+          outputParameters:
+            - type: array
+              mapping: "$."
