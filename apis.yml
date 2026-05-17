@@ -7,7 +7,7 @@ description: >-
   enable organizations to automate CRM, sales, marketing, and customer service
   workflows programmatically via the Salesforce REST API.
 type: Index
-x-type: company
+kind: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Approval Process
@@ -69,7 +69,7 @@ apis:
     properties:
       - type: Documentation
         url: https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm
-      - type: Getting Started
+      - type: GettingStarted
         url: https://trailhead.salesforce.com/content/learn/trails/automate_business_processes
   - aid: salesforce-automation-system:salesforce-approval-processes
     name: Salesforce Approval Processes
@@ -85,7 +85,7 @@ apis:
     properties:
       - type: Documentation
         url: https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm
-      - type: API Reference
+      - type: APIReference
         url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_process_approvals.htm
 maintainers:
   - FN: Kin Lane
@@ -101,15 +101,15 @@ common:
     url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm
   - type: Blog
     url: https://developer.salesforce.com/blogs
-  - type: Status
+  - type: StatusPage
     url: https://status.salesforce.com/
   - type: Support
     url: https://help.salesforce.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.salesforce.com/company/legal/agreements/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.salesforce.com/company/privacy/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/salesforce
   - type: Community
     url: https://trailhead.salesforce.com/trailblazer-community/topics/salesforcedeveloper
