@@ -1,97 +1,107 @@
 # Salesforce Automation System (salesforce-automation-system)
-Salesforce automation APIs and tools for building Flow-based automation, approval processes, and workflow automation to automate CRM business processes programmatically.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml)
+Salesforce Automation System refers to the collection of APIs and tools within Salesforce for automating business processes, including Flow Builder, approval processes, Process Builder, and Workflow Rules. These capabilities enable organizations to automate CRM, sales, marketing, and customer service workflows programmatically via the Salesforce REST API.
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml)
 
 ## Scope
 
 - **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
 
 ## Tags
 
-- Approval Process, Automation, CRM, Flow, Process Builder, Salesforce, Workflow
+- Approval Process
+- Automation
+- CRM
+- Flow
+- Process Builder
+- Salesforce
+- Workflow
 
 ## Timestamps
 
 - **Created:** 2024-01-15
-- **Modified:** 2026-05-02
+- **Modified:** 2026-05-19
 
 ## APIs
 
 ### Salesforce Flow Automation API
-REST API for invoking autolaunched flows, querying flow definitions via Tooling API, and managing approval process submissions.
 
-**Human URL:** https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm
+REST API for querying Salesforce Flow definitions via the Tooling API, invoking autolaunched flows as REST actions, and managing approval process submissions and decisions.
+
+- **Human URL:** [https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm)
+- **Base URL:** `https://{instance}.salesforce.com/services/data/v59.0`
 
 #### Tags
-- Approval Process, Automation, CRM, Flow, Salesforce, Workflow
+
+- Approval Process
+- Automation
+- CRM
+- Flow
+- Salesforce
+- Workflow
 
 #### Properties
+
 - [Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm)
-- [OpenAPI](openapi/salesforce-automation-flow-openapi.yml)
-- [JSON Schema (Flow Definition)](json-schema/salesforce-flow-definition-schema.json)
-- [JSON Schema (Approval Request)](json-schema/salesforce-approval-request-schema.json)
-- [JSON-LD Context](json-ld/salesforce-automation-system-context.jsonld)
+- [OpenAPI](openapi/salesforce-automation-flow-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/salesforce-automation-flow.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/salesforce-automation-flow.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [JSON Schema](json-schema/salesforce-flow-definition-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/salesforce-approval-request-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON-LD](json-ld/salesforce-automation-system-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 - [Spectral Rules](rules/salesforce-automation-system-rules.yml)
 - [Capabilities](capabilities/process-automation.yaml)
 - [Vocabulary](vocabulary/salesforce-automation-system-vocabulary.yml)
 
----
-
 ### Salesforce Flow Builder
-Visual automation tool for building screen flows, record-triggered flows, and scheduled automations.
 
-**Human URL:** https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm
+Visual automation tool for building screen flows, autolaunched flows, record-triggered flows, and scheduled flows without code.
 
----
+- **Human URL:** [https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm](https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm)
+
+#### Tags
+
+- Automation
+- Flow
+- No-Code
+- Salesforce
+
+#### Properties
+
+- [Documentation](https://developer.salesforce.com/docs/atlas.en-us.flow.meta/flow/flow_intro.htm)
+- [Getting Started](https://trailhead.salesforce.com/content/learn/trails/automate_business_processes)
+- [Postman Collection](collections/salesforce-automation-flow.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/salesforce-automation-flow.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Salesforce Approval Processes
-Multi-step approval automation for routing records through configurable review chains.
 
-**Human URL:** https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm
+Multi-step approval automation for routing records through review chains with configurable criteria, approvers, and post-approval actions.
 
----
+- **Human URL:** [https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm](https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm)
 
-## Capabilities
+#### Tags
 
-### Shared Definitions
+- Approval
+- Automation
+- CRM
+- Salesforce
 
-| File | Description |
-|------|-------------|
-| [capabilities/shared/salesforce-automation-flow.yaml](capabilities/shared/salesforce-automation-flow.yaml) | Shared consumed definition for Salesforce Flow Automation API |
+#### Properties
 
-### Workflow Capabilities
-
-| File | Description | APIs |
-|------|-------------|------|
-| [capabilities/process-automation.yaml](capabilities/process-automation.yaml) | Process automation (flows + approvals) | Salesforce Flow Automation API |
-
-## Artifacts
-
-| Artifact | Path |
-|----------|------|
-| OpenAPI Spec | [openapi/salesforce-automation-flow-openapi.yml](openapi/salesforce-automation-flow-openapi.yml) |
-| JSON Schema (Flow) | [json-schema/salesforce-flow-definition-schema.json](json-schema/salesforce-flow-definition-schema.json) |
-| JSON Schema (Approval) | [json-schema/salesforce-approval-request-schema.json](json-schema/salesforce-approval-request-schema.json) |
-| JSON Structure | [json-structure/salesforce-automation-system-structure.json](json-structure/salesforce-automation-system-structure.json) |
-| JSON-LD Context | [json-ld/salesforce-automation-system-context.jsonld](json-ld/salesforce-automation-system-context.jsonld) |
-| Spectral Rules | [rules/salesforce-automation-system-rules.yml](rules/salesforce-automation-system-rules.yml) |
-| Vocabulary | [vocabulary/salesforce-automation-system-vocabulary.yml](vocabulary/salesforce-automation-system-vocabulary.yml) |
-
-## Examples
-
-- [Invoke Flow](examples/salesforce-invoke-flow-example.json)
-- [Submit Approval Request](examples/salesforce-submit-approval-example.json)
+- [Documentation](https://help.salesforce.com/s/articleView?id=sf.approvals_landing_page.htm)
+- [API Reference](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_process_approvals.htm)
+- [Postman Collection](collections/salesforce-automation-flow.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/salesforce-automation-flow.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
-- [Developer Portal](https://developer.salesforce.com/)
+- [Developer  Portal](https://developer.salesforce.com/)
 - [Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/)
 - [Trailhead](https://trailhead.salesforce.com/content/learn/trails/automate_business_processes)
 - [Authentication](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm)
-- [Status](https://status.salesforce.com/)
+- [Blog](https://developer.salesforce.com/blogs)
+- [Status Page](https://status.salesforce.com/)
 - [Support](https://help.salesforce.com/)
 - [Terms of Service](https://www.salesforce.com/company/legal/agreements/)
 - [Privacy Policy](https://www.salesforce.com/company/privacy/)
