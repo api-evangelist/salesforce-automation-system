@@ -2,14 +2,13 @@
   "repo": "salesforce-automation-system",
   "feeds": [
     {
-      "source": "https://developer.salesforce.com/blogs/feed",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
-      "error": "HTTPError"
+      "source": "https://developer.salesforce.com/blogs",
+      "feed_url": "",
+      "saved": 2,
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 12,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T13:07:50Z",
+  "post_count": 16,
+  "agent_pulled": "2026-06-27"
 }
