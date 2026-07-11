@@ -88,6 +88,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: DomainSecurity
+    url: security/salesforce-automation-system-domain-security.yml
   - type: Authentication
     url: authentication/salesforce-automation-system-authentication.yml
   - type: OAuthScopes
