@@ -88,6 +88,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/salesforce-automation-system-agentic-access.yml
   - type: DomainSecurity
     url: security/salesforce-automation-system-domain-security.yml
   - type: Authentication
