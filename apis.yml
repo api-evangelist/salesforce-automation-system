@@ -89,8 +89,6 @@ apis:
     url: json-ld/salesforce-automation-system-context.jsonld
   - type: SpectralRules
     url: rules/salesforce-automation-system-rules.yml
-  - type: Capabilities
-    url: capabilities/process-automation.yaml
   - type: Vocabulary
     url: vocabulary/salesforce-automation-system-vocabulary.yml
 - aid: salesforce-automation-system:salesforce-automation-system-process-automation-api
@@ -115,8 +113,6 @@ apis:
     url: json-ld/salesforce-automation-system-context.jsonld
   - type: SpectralRules
     url: rules/salesforce-automation-system-rules.yml
-  - type: Capabilities
-    url: capabilities/process-automation.yaml
   - type: Vocabulary
     url: vocabulary/salesforce-automation-system-vocabulary.yml
 maintainers:
