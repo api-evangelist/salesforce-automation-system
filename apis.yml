@@ -28,6 +28,14 @@ tags:
   - Flow
   - Process Builder
   - Salesforce
+  - Workflows
+tags_raw:
+  - Approval Process
+  - Automation
+  - CRM
+  - Flow
+  - Process Builder
+  - Salesforce
   - Workflow
 url: https://raw.githubusercontent.com/api-evangelist/salesforce-automation-system/refs/heads/main/apis.yml
 created: '2024-01-15'
