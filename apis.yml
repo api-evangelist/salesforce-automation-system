@@ -94,6 +94,8 @@ apis:
     https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_actions_invocable.htm
   baseURL: https://{instance}.salesforce.com/services/data/v59.0
   tags:
+  - Flow
+  tags_raw:
   - Flows
   properties:
   - type: OpenAPI
